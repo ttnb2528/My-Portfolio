@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
+    "@tsparticles/engine": "^3.8.1",
+    "@tsparticles/react": "^3.0.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.16.0",
@@ -19,7 +21,7 @@
     "react-dom": "^19.0.0",
     "react-tsparticles": "^2.12.2",
     "tailwind-merge": "^3.3.0",
-    "tsparticles": "^3.8.1"
+    "tsparticles": "^2.0.6"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
