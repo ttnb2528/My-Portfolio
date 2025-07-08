@@ -2,6 +2,7 @@ import About from "@/components/About";
 import Certificates from "@/components/Certificates";
 import Hero from "@/components/Hero";
 import ParticleBackground from "@/components/ParticleBackground";
+import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 
 import React from "react";
@@ -15,6 +16,7 @@ const page = () => {
         <About />
         <Skills />
         <Certificates />
+        <Projects />
       </div>
     </main>
   );
