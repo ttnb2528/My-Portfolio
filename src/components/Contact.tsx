@@ -61,11 +61,11 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Liên hệ</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Contact</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 mx-auto mb-6"></div>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Hãy liên hệ với tôi nếu bạn có câu hỏi hoặc muốn trò chuyện thêm về
-            các dự án
+            Feel free to reach out if you have any questions or want to chat
+            about my projects.
           </p>
         </motion.div>
 
@@ -81,7 +81,7 @@ export default function Contact() {
               <CardContent className="p-0">
                 <div className="p-6 sm:p-8">
                   <h3 className="text-xl font-semibold mb-6 text-white">
-                    Gửi tin nhắn
+                    Send a Message
                   </h3>
 
                   {submitted ? (
@@ -94,10 +94,11 @@ export default function Contact() {
                         <Sparkles className="h-6 w-6 text-white" />
                       </div>
                       <h4 className="text-xl font-medium text-white mb-2">
-                        Tin nhắn đã được gửi!
+                        Message Sent!
                       </h4>
                       <p className="text-gray-300">
-                        Cảm ơn bạn đã liên hệ. Tôi sẽ phản hồi sớm nhất có thể.
+                        Thank you for reaching out. I will get back to you as
+                        soon as possible.
                       </p>
                     </motion.div>
                   ) : (
@@ -108,14 +109,14 @@ export default function Contact() {
                             htmlFor="name"
                             className="block text-sm font-medium text-gray-300 mb-1"
                           >
-                            Họ tên
+                            Name
                           </label>
                           <Input
                             id="name"
                             name="name"
                             value={formData.name}
                             onChange={handleChange}
-                            placeholder="Nhập họ tên của bạn"
+                            placeholder="Enter your name"
                             required
                             className="bg-slate-800 border-purple-500/30 focus:border-purple-500 focus:ring-purple-500 text-white placeholder:text-gray-500"
                           />
@@ -133,7 +134,7 @@ export default function Contact() {
                             type="email"
                             value={formData.email}
                             onChange={handleChange}
-                            placeholder="Nhập email của bạn"
+                            placeholder="Enter your email"
                             required
                             className="bg-slate-800 border-purple-500/30 focus:border-purple-500 focus:ring-purple-500 text-white placeholder:text-gray-500"
                           />
@@ -144,14 +145,14 @@ export default function Contact() {
                           htmlFor="subject"
                           className="block text-sm font-medium text-gray-300 mb-1"
                         >
-                          Tiêu đề
+                          Subject
                         </label>
                         <Input
                           id="subject"
                           name="subject"
                           value={formData.subject}
                           onChange={handleChange}
-                          placeholder="Nhập tiêu đề"
+                          placeholder="Enter subject"
                           required
                           className="bg-slate-800 border-purple-500/30 focus:border-purple-500 focus:ring-purple-500 text-white placeholder:text-gray-500"
                         />
@@ -161,14 +162,14 @@ export default function Contact() {
                           htmlFor="message"
                           className="block text-sm font-medium text-gray-300 mb-1"
                         >
-                          Nội dung
+                          Message
                         </label>
                         <Textarea
                           id="message"
                           name="message"
                           value={formData.message}
                           onChange={handleChange}
-                          placeholder="Nhập nội dung tin nhắn"
+                          placeholder="Enter your message"
                           rows={6}
                           required
                           className="bg-slate-800 border-purple-500/30 focus:border-purple-500 focus:ring-purple-500 text-white placeholder:text-gray-500"
@@ -182,12 +183,12 @@ export default function Contact() {
                         {isSubmitting ? (
                           <div className="flex items-center">
                             <div className="animate-spin mr-2 h-5 w-5 border-2 border-white border-t-transparent rounded-full"></div>
-                            Đang gửi...
+                            Sending...
                           </div>
                         ) : (
                           <div className="flex items-center justify-center">
                             <Send className="mr-2 h-5 w-5" />
-                            Gửi tin nhắn
+                            Send Message
                           </div>
                         )}
                       </Button>
@@ -209,7 +210,7 @@ export default function Contact() {
               <CardContent className="p-0">
                 <div className="p-6 sm:p-8 h-full flex flex-col">
                   <h3 className="text-xl font-semibold mb-6 text-white">
-                    Thông tin liên hệ
+                    Contact Info
                   </h3>
 
                   <div className="space-y-8 flex-grow">
@@ -221,12 +222,12 @@ export default function Contact() {
                       </div>
                       <div className="ml-4">
                         <h4 className="text-lg font-medium text-white mb-1">
-                          Địa chỉ
+                          Address
                         </h4>
                         <p className="text-gray-300">
-                          [Địa chỉ của bạn]
+                          [Your Address]
                           <br />
-                          [Thành phố, Quốc gia]
+                          [City, Country]
                         </p>
                       </div>
                     </div>
@@ -258,7 +259,7 @@ export default function Contact() {
                       </div>
                       <div className="ml-4">
                         <h4 className="text-lg font-medium text-white mb-1">
-                          Điện thoại
+                          Phone
                         </h4>
                         <a
                           href="tel:+1234567890"
@@ -279,7 +280,7 @@ export default function Contact() {
                         <Mail className="mr-2 h-4 w-4" /> Email
                       </Button>
                       <Button className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white border-0">
-                        <Phone className="mr-2 h-4 w-4" /> Gọi điện
+                        <Phone className="mr-2 h-4 w-4" /> Call
                       </Button>
                     </div>
                   </div>
