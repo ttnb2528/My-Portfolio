@@ -1,5 +1,6 @@
 import About from "@/components/About";
 import Certificates from "@/components/Certificates";
+import Contact from "@/components/Contact";
 import Hero from "@/components/Hero";
 import ParticleBackground from "@/components/ParticleBackground";
 import Projects from "@/components/Projects";
@@ -17,6 +18,7 @@ const page = () => {
         <Skills />
         <Certificates />
         <Projects />
+        <Contact />
       </div>
     </main>
   );
