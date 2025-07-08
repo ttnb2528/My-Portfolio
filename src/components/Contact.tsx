@@ -225,9 +225,9 @@ export default function Contact() {
                           Address
                         </h4>
                         <p className="text-gray-300">
-                          [Your Address]
+                          Cho Moi District, An Giang Province
                           <br />
-                          [City, Country]
+                          Vietnam
                         </p>
                       </div>
                     </div>
@@ -243,10 +243,10 @@ export default function Contact() {
                           Email
                         </h4>
                         <a
-                          href="mailto:your-email@example.com"
+                          href="mailto:thientan2812@gmail.com"
                           className="text-purple-400 hover:text-purple-300 transition-colors"
                         >
-                          your-email@example.com
+                          thientan2812@gmail.com
                         </a>
                       </div>
                     </div>
@@ -262,10 +262,10 @@ export default function Contact() {
                           Phone
                         </h4>
                         <a
-                          href="tel:+1234567890"
+                          href="tel:+0941214495"
                           className="text-purple-400 hover:text-purple-300 transition-colors"
                         >
-                          +123 456 7890
+                          +8494 121 44 95
                         </a>
                       </div>
                     </div>

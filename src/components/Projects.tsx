@@ -16,68 +16,107 @@ export default function Projects() {
   const featuredProjects = [
     {
       id: 1,
-      title: "Project 1",
+      title: "iPhone 14 Dynamic Islands",
       description:
-        "A brief description of your project 1. Explain the technologies used and what you learned from this project.",
-      image: "/placeholder.svg?height=300&width=500",
-      tags: ["React", "CSS", "JavaScript"],
-      githubUrl: "#",
-      liveUrl: "#",
+        "An interactive CSS-only recreation of iPhone 14's Dynamic Island feature with smooth animations and color theme switching. Features realistic phone design, hover/focus interactions, music player interface, and multiple color variants including Deep Purple, Gold, Space Black, and Silver.",
+      image:
+        "https://res.cloudinary.com/thientan/image/upload/demo_iphoneUI_p3ftju.png",
+      tags: [
+        "HTML",
+        "CSS",
+        "CSS Animations",
+        "Interactive Design",
+        "Pure CSS",
+        "UI/UX",
+        "Responsive Design",
+        "CSS Grid",
+        "CSS Custom Properties",
+      ],
+      githubUrl: "https://github.com/ttnb2528/Iphone-14",
+      liveUrl: "https://ttnb2528.github.io/Iphone-14/",
     },
     {
       id: 2,
-      title: "Project 2",
+      title: "Synchronous Chat App",
       description:
-        "A short description of your project 2. Describe the technologies applied and the knowledge gained through building it.",
-      image: "/placeholder.svg?height=300&width=500",
-      tags: ["HTML", "CSS", "JavaScript"],
-      githubUrl: "#",
-      liveUrl: "#",
+        "A full-stack real-time messaging application with direct messaging and group channels. Features include file sharing, emoji picker, user authentication, profile management, and real-time notifications. Built with modern web technologies and deployed on Render.",
+      image:
+        "https://res.cloudinary.com/thientan/image/upload/demo_chat_app_vumgrg.png",
+      tags: [
+        "React",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Socket.io",
+        "Tailwind CSS",
+        "Zustand",
+        "JWT",
+        "Cloudinary",
+        "Vite",
+      ],
+      githubUrl: "https://github.com/ttnb2528/Sync-chat-app",
+      liveUrl: "https://sync-chat-app.onrender.com/",
     },
     {
       id: 3,
-      title: "Project 3",
+      title: "Pharmacy Management System",
       description:
-        "A concise description of your project 3. Highlight the tech stack and your takeaways from this work.",
-      image: "/placeholder.svg?height=300&width=500",
-      tags: ["React", "CSS Modules", "Context API"],
-      githubUrl: "#",
+        "A comprehensive pharmacy e-commerce platform with admin dashboard, ML content moderation, and complete business management features. Includes inventory management, prescription handling, payment integration (PayPal/VNPay), loyalty program, and AI-powered toxic comment detection using PhoBERT model.",
+      image: "https://res.cloudinary.com/thientan/image/upload/demo_pharmacySystem_euvant.png",
+      tags: [
+        "React",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Python",
+        "Flask",
+        "PhoBERT",
+        "Machine Learning",
+        "PayPal",
+        "VNPay",
+        "Tailwind CSS",
+        "Zustand",
+        "Cloudinary",
+        "JWT",
+        "Shadcn UI",
+      ],
+      githubUrl: "https://github.com/ttnb2528/Pharmacy",
       liveUrl: "#",
     },
   ];
 
-  const additionalProjects = [
-    {
-      id: 4,
-      title: "Project 4",
-      description:
-        "A small project to practice using external APIs and handling asynchronous data.",
-      image: "/placeholder.svg?height=300&width=500",
-      tags: ["React", "Fetch API", "Async/Await"],
-      githubUrl: "#",
-      liveUrl: "#",
-    },
-    {
-      id: 5,
-      title: "Project 5",
-      description:
-        "A simple task management app with features to add, edit, delete, and filter tasks.",
-      image: "/placeholder.svg?height=300&width=500",
-      tags: ["React", "LocalStorage", "CSS"],
-      githubUrl: "#",
-      liveUrl: "#",
-    },
-    {
-      id: 6,
-      title: "Project 6",
-      description:
-        "A product landing page with responsive design and smooth transition effects.",
-      image: "/placeholder.svg?height=300&width=500",
-      tags: ["HTML", "CSS", "JavaScript"],
-      githubUrl: "#",
-      liveUrl: "#",
-    },
-  ];
+  // const additionalProjects = [
+  //   {
+  //     id: 4,
+  //     title: "Project 4",
+  //     description:
+  //       "A small project to practice using external APIs and handling asynchronous data.",
+  //     image: "/placeholder.svg?height=300&width=500",
+  //     tags: ["React", "Fetch API", "Async/Await"],
+  //     githubUrl: "#",
+  //     liveUrl: "#",
+  //   },
+  //   {
+  //     id: 5,
+  //     title: "Project 5",
+  //     description:
+  //       "A simple task management app with features to add, edit, delete, and filter tasks.",
+  //     image: "/placeholder.svg?height=300&width=500",
+  //     tags: ["React", "LocalStorage", "CSS"],
+  //     githubUrl: "#",
+  //     liveUrl: "#",
+  //   },
+  //   {
+  //     id: 6,
+  //     title: "Project 6",
+  //     description:
+  //       "A product landing page with responsive design and smooth transition effects.",
+  //     image: "/placeholder.svg?height=300&width=500",
+  //     tags: ["HTML", "CSS", "JavaScript"],
+  //     githubUrl: "#",
+  //     liveUrl: "#",
+  //   },
+  // ];
 
   const toggleShowMore = () => setShowMore(!showMore);
 
@@ -141,7 +180,7 @@ export default function Projects() {
           ))}
         </motion.div>
 
-        <AnimatePresence>
+        {/* <AnimatePresence>
           {showMore && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
@@ -155,9 +194,9 @@ export default function Projects() {
               ))}
             </motion.div>
           )}
-        </AnimatePresence>
+        </AnimatePresence> */}
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
@@ -177,7 +216,7 @@ export default function Projects() {
               />
             </span>
           </Button>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
@@ -202,7 +241,7 @@ function ProjectCard({ project, variants }: { project: any; variants?: any }) {
           <h3 className="text-xl font-bold mb-2 text-white">{project.title}</h3>
           <p className="text-gray-300 mb-4 flex-grow">{project.description}</p>
           <div className="flex flex-wrap gap-2 mb-4">
-            {project.tags.map(({ tag }: { tag: any }) => (
+            {project.tags.map((tag: string) => (
               <span
                 key={tag}
                 className="text-xs font-medium bg-purple-900/50 text-purple-300 px-2.5 py-0.5 rounded-full border border-purple-500/30"

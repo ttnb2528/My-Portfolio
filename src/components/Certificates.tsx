@@ -2,51 +2,48 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Award, ExternalLink, Calendar } from "lucide-react";
-import { motion } from "framer-motion";
+import { Award, ExternalLink, Calendar, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
+import { Button } from "./ui/button";
+
+interface Certificate {
+  id: number;
+  title: string;
+  issuer: string;
+  date: string;
+  image: string;
+  skills: string[];
+  url: string;
+}
 
 export default function Certificates() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
-  const certificates = [
+  const [selectedCert, setSelectedCert] = useState<Certificate | null>(null);
+
+  const certificates: Certificate[] = [
     {
       id: 1,
-      title: "React - The Complete Guide",
-      issuer: "Udemy",
-      date: "March 2023",
-      image: "/placeholder.svg?height=80&width=80",
-      skills: ["React", "Hooks", "Redux", "Context API"],
+      title: "Google UX Design Professional Certificate",
+      issuer: "Google",
+      date: "December 2024",
+      image:
+        "https://res.cloudinary.com/thientan/image/upload/Coursera_google_UX_UI_wjarlt.jpg",
+      skills: ["UX Design", "UI Design", "User Research", "Prototyping"],
       url: "#",
     },
     {
       id: 2,
-      title: "JavaScript Advanced Concepts",
-      issuer: "Coursera",
-      date: "November 2022",
-      image: "/placeholder.svg?height=80&width=80",
-      skills: ["ES6+", "Closures", "Prototypes", "Async/Await"],
-      url: "#",
-    },
-    {
-      id: 3,
-      title: "Web Design Fundamentals",
-      issuer: "FreeCodeCamp",
-      date: "July 2022",
-      image: "/placeholder.svg?height=80&width=80",
-      skills: ["HTML", "CSS", "Responsive Design", "UX/UI"],
-      url: "#",
-    },
-    {
-      id: 4,
-      title: "Git & GitHub Mastery",
-      issuer: "Udemy",
-      date: "May 2023",
-      image: "/placeholder.svg?height=80&width=80",
-      skills: ["Git", "GitHub", "Version Control", "Collaboration"],
+      title: "TOEIC Certificate - 555 Points",
+      issuer: "ETS",
+      date: "August 2024",
+      image:
+        "https://res.cloudinary.com/thientan/image/upload/certificate_Toeic_usrj4w.webp",
+      skills: ["Listening", "Reading", "English Proficiency"],
       url: "#",
     },
   ];
@@ -106,6 +103,7 @@ export default function Certificates() {
               key={cert.id}
               variants={itemVariants}
               whileHover={{ y: -5 }}
+              className="cursor-pointer"
             >
               <Card className="bg-slate-800/50 border-purple-500/20 backdrop-blur-sm hover:border-purple-500/50 transition-all duration-300 shadow-xl shadow-purple-900/10 h-full">
                 <CardContent className="p-6 flex flex-col h-full">
@@ -115,8 +113,10 @@ export default function Certificates() {
                         <Award className="h-6 w-6 text-purple-400" />
                       </div>
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-white">{cert.title}</h3>
+                    <div className="w-full">
+                      <h3 className="font-semibold text-white line-clamp-1">
+                        {cert.title}
+                      </h3>
                       <p className="text-sm text-gray-400">{cert.issuer}</p>
                     </div>
                   </div>
@@ -139,13 +139,13 @@ export default function Certificates() {
                   </div>
 
                   <div className="mt-auto pt-2">
-                    <Link
-                      href={cert.url}
+                    <span
                       className="text-xs flex items-center text-purple-400 hover:text-purple-300 transition-colors"
+                      onClick={() => setSelectedCert(cert)}
                     >
                       <span className="mr-1">View Certificate</span>
                       <ExternalLink className="h-3 w-3" />
-                    </Link>
+                    </span>
                   </div>
                 </CardContent>
               </Card>
@@ -153,6 +153,42 @@ export default function Certificates() {
           ))}
         </motion.div>
       </div>
+
+      <AnimatePresence>
+        {selectedCert && (
+          <motion.div
+            key="modal"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/70 backdrop-blur flex items-center justify-center z-50"
+            onClick={() => setSelectedCert(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.8 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-slate-900 p-6 rounded-xl max-w-xl w-full relative"
+            >
+              <Button
+                onClick={() => setSelectedCert(null)}
+                className="absolute top-4 right-4 text-gray-400 hover:text-gray-200"
+              >
+                <X className="w-5 h-5" />
+              </Button>
+              <h3 className="text-xl font-semibold mb-4 text-white">
+                {selectedCert.title}
+              </h3>
+              <img
+                src={selectedCert.image}
+                alt={selectedCert.title}
+                className="w-full rounded-lg border border-purple-500/30"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
