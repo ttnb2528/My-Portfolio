@@ -1,6 +1,8 @@
 import About from "@/components/About";
 import Hero from "@/components/Hero";
 import ParticleBackground from "@/components/ParticleBackground";
+import Skills from "@/components/Skills";
+
 import React from "react";
 
 const page = () => {
@@ -10,6 +12,7 @@ const page = () => {
       <div className="relative z-10">
         <Hero />
         <About />
+        <Skills />
       </div>
     </main>
   );
