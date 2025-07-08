@@ -23,31 +23,29 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               <Link
-                href="#"
+                href="https://www.facebook.com/thientan2528/"
+                target="_blank"
                 className="text-gray-300 hover:text-purple-400 transition-colors"
               >
                 <Facebook className="h-5 w-5" />
               </Link>
               <Link
-                href="#"
-                className="text-gray-300 hover:text-purple-400 transition-colors"
-              >
-                <Twitter className="h-5 w-5" />
-              </Link>
-              <Link
-                href="#"
+                href="https://www.instagram.com/thientan2812/"
+                target="_blank"
                 className="text-gray-300 hover:text-purple-400 transition-colors"
               >
                 <Instagram className="h-5 w-5" />
               </Link>
               <Link
-                href="#"
+                href="https://www.linkedin.com/in/t%E1%BA%A5n-d%C6%B0%C6%A1ng-321186343/"
+                target="_blank"
                 className="text-gray-300 hover:text-purple-400 transition-colors"
               >
                 <Linkedin className="h-5 w-5" />
               </Link>
               <Link
-                href="#"
+                href="https://github.com/ttnb2528"
+                target="_blank"
                 className="text-gray-300 hover:text-purple-400 transition-colors"
               >
                 <Github className="h-5 w-5" />
@@ -109,24 +107,24 @@ export default function Footer() {
               <li className="text-gray-300">
                 <span className="block">Email:</span>
                 <Link
-                  href="mailto:your-email@example.com"
+                  href="mailto:thientan2812@gmail.com"
                   className="text-purple-400 hover:text-purple-300 transition-colors"
                 >
-                  your-email@example.com
+                  thientan2812@gmail.com
                 </Link>
               </li>
               <li className="text-gray-300">
                 <span className="block">Phone:</span>
                 <Link
-                  href="tel:+1234567890"
+                  href="tel:+0941214495"
                   className="text-purple-400 hover:text-purple-300 transition-colors"
                 >
-                  +123 456 7890
+                  +84941 21 44 95
                 </Link>
               </li>
               <li className="text-gray-300">
                 <span className="block">Address:</span>
-                <span>Your Address</span>
+                <span>Cho Moi District, An Giang Province, VietNam</span>
               </li>
             </ul>
           </div>

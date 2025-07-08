@@ -3,6 +3,12 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Smooth scrolling for better navigation */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Offset for fixed navbar */
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
