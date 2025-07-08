@@ -1,4 +1,5 @@
 import About from "@/components/About";
+import Certificates from "@/components/Certificates";
 import Hero from "@/components/Hero";
 import ParticleBackground from "@/components/ParticleBackground";
 import Skills from "@/components/Skills";
@@ -13,6 +14,7 @@ const page = () => {
         <Hero />
         <About />
         <Skills />
+        <Certificates />
       </div>
     </main>
   );
