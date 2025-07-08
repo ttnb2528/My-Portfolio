@@ -1,3 +1,4 @@
+import About from "@/components/About";
 import Hero from "@/components/Hero";
 import ParticleBackground from "@/components/ParticleBackground";
 import React from "react";
@@ -8,6 +9,7 @@ const page = () => {
       <ParticleBackground />
       <div className="relative z-10">
         <Hero />
+        <About />
       </div>
     </main>
   );
